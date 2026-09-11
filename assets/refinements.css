@@ -1,4 +1,12 @@
 /* Final semantic theme rules: keep foreground/background pairs together. */
+.topbar .lang-toggle{display:inline-flex!important;align-items:center;justify-content:center;background:var(--action,#805924);border-color:var(--action,#805924);color:#fff;min-height:34px;white-space:nowrap}
+html[lang="en"] .model-label{direction:ltr;text-align:left}
+html[lang="en"] .product-tile,html[lang="en"] .decision-choice,html[lang="en"] .quick{text-align:left}
+html[lang="en"] .eyebrow{letter-spacing:.06em}
+html[lang="en"] .float-panel{left:auto;right:0}
+.hero-ai .neural-field{pointer-events:none;opacity:.32;background:radial-gradient(ellipse at 15% 60%,rgba(100,174,143,.22),transparent 65%);mask-image:linear-gradient(to right,#000 10%,rgba(0,0,0,.7) 55%,rgba(0,0,0,.2));-webkit-mask-image:linear-gradient(to right,#000 10%,rgba(0,0,0,.7) 55%,rgba(0,0,0,.2))}
+.hero-ai .neural-field::before,.hero-ai .neural-field::after{content:none}
+.hero-ai .neural-field canvas{display:block;width:100%;height:100%}
 .busola-logo{display:block;width:42px;height:42px;flex:0 0 42px;object-fit:contain;background:transparent;border:0;filter:none}
 /* Reference-sampled brand background, independently of the selected theme. */
 .sidebar .brand{background:#3E5B4B;color:#fff;margin:-28px -16px 0;padding:28px 26px;border-bottom:1px solid #d5c9ad;min-height:99px}

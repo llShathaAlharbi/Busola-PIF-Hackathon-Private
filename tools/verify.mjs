@@ -1,0 +1,27 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const source=fs.readFileSync('assets/experience.js','utf8');
+const start=source.indexOf('function calculate(v)');
+const end=source.indexOf('window.busolaCalculate=calculate;');
+const calculate=vm.runInNewContext(source.slice(start,end)+';calculate');
+const v={demand:20000,import:9200,local:7100,capex:36000000,fixed:6000000,years:3,delay:30,daycost:30000,ramp:12};
+const normal=calculate(v);
+assert.equal(normal.baseline,554700000);
+assert.equal(normal.rows.find(x=>x.id==='build').cost,542640000);
+const low=calculate({...v,demand:10000});
+assert(low.rows.find(x=>x.id==='build').cost>low.baseline,'Lower demand must reveal uneconomic investment');
+const late=calculate({...v,ramp:120});
+assert.equal(late.rows.find(x=>x.id==='build').local,0,'No local supply before qualification');
+assert.equal(late.rows.find(x=>x.id==='build').cost,late.baseline+v.capex);
+const ten=calculate({...v,years:10});
+assert.equal(ten.best.id,'build','Longer horizon should recover the investment for this case');
+const noDisruption=calculate({...v,delay:0});
+assert.equal(noDisruption.baseline,v.demand*v.import*v.years);
+for(const r of [normal,low,late,ten,noDisruption])for(const x of r.rows){assert(Number.isFinite(x.cost));assert(x.local>=0&&x.local<=100);}
+const glb=fs.readFileSync('assets/semiconductor.glb');
+assert.equal(glb.toString('ascii',0,4),'glTF');
+const json=JSON.parse(glb.toString('utf8',20,20+glb.readUInt32LE(12)));
+assert.deepEqual(json.nodes.filter(n=>n.extras?.part_id).map(n=>n.extras.part_id).sort(),['attach','die','leadframe','mold','wires']);
+assert(json.animations.length>=1,'Blender export contains authored animation');
+console.log('PASS: six-path economics, low demand, qualification delay, horizon, finite outputs, GLB parts and animation.');

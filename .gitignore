@@ -1,0 +1,60 @@
+# Secrets and local runtime configuration (including example .env files)
+.env
+.env.*
+*.env
+*.env.*
+.envrc
+.npmrc
+.pypirc
+.netrc
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+credentials.json
+*credentials*.json
+secrets.*
+secrets/
+.secrets/
+id_rsa*
+id_ed25519*
+
+# Machine/account-specific tools and hosting state
+/.openai/
+/.codex/
+/.agents/
+/.vscode/
+/.idea/
+/Keep-Busola-Running.ps1
+
+# Dependencies, caches and build output
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.cache/
+coverage/
+/dist/
+/output/
+/.presentation-build/
+/tools/blender*/
+/tools/blender*.zip
+*.tar.gz
+*.log
+*.pid
+*.tmp
+*.bak
+*.blend1
+*.blend2
+
+# Private source documents and generated presentation artifacts
+*.docx
+*.pptx
+~$*
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
