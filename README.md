@@ -1,5 +1,7 @@
 # Busola | بوصلة
 
+GitHub repository: **Busola-PIF-Hackathon**.
+
 Interactive hackathon prototype for Busola, a decision-intelligence platform that turns supply-chain vulnerabilities into local-content and investment opportunities. Its evidence-aware AI adviser is Atheer (أثير).
 
 ## Run
