@@ -1,12 +1,16 @@
 # Busola | بوصلة
 
+**[Open the live Busola demo](https://llshathaalharbi.github.io/Busola-PIF-Hackathon/)**
+
+The published website runs as a static GitHub Pages demo. No local server is required for visitors. Aether (أثير) currently uses its existing built-in demo responses; the live Node.js AI backend is not deployed on GitHub Pages.
+
 GitHub repository: **Busola-PIF-Hackathon**.
 
-Interactive hackathon prototype for Busola, a decision-intelligence platform that turns supply-chain vulnerabilities into local-content and investment opportunities. Its evidence-aware AI adviser is Atheer (أثير).
+Interactive hackathon prototype for Busola, a decision-intelligence platform that turns supply-chain vulnerabilities into local-content and investment opportunities. Its evidence-aware AI adviser is Aether (أثير).
 
-## Run
+## Local development (optional)
 
-Run `node serve.mjs`, then open http://127.0.0.1:8080 . Use this local server rather than opening the HTML as a file: the 3D viewer loads JavaScript modules and a GLB asset. Three.js and model assets are bundled locally; no installation is required to run the site.
+For local development, run `node serve.mjs` and open the address printed in your terminal. Do not open `index.html` directly: the 3D viewer requires HTTP serving for JavaScript modules and the GLB asset. Three.js and model assets are bundled locally. Node.js is required for the local server; visitors to the published demo do not need it.
 
 The capability composer now includes a searchable industrial catalogue and an animated semiconductor package authored in Blender (`assets/semiconductor.blend`, exported to GLB). It supports explosion/reassembly, rotation, zoom, part selection, and per-part demo trade and localization metrics. The other three products use conceptual procedural geometry. `assets/SOURCES.md` records provenance and data limits.
 
@@ -14,7 +18,7 @@ The revised decision simulator compares six responses with explicit cost calcula
 
 ## What is included
 
-- Arabic RTL executive experience with five focused workspaces
+- Arabic RTL and English LTR interfaces with five focused workspaces.
 - Interactive vulnerability-to-opportunity map
 - Decision simulator that compares import mitigation, local sourcing, supplier development, and local capability build-out
 - Capability Composer for combining fragmented Saudi capabilities
@@ -29,6 +33,6 @@ The PIF mark is stored locally at `assets/pif-logo.svg` for the requested protot
 
 The suggested backend contract and implementation boundaries are documented in `backend/ARCHITECTURE.md`. `backend/mock-server.js` is a dependency-free mock API that mirrors the UI's principal endpoints for a demo environment.
 
-`backend/ai-server.mjs` is an optional, server-side gateway for a live OpenAI-backed version of Atheer. It requires an API key set in the server environment, never in the browser. It uses the Responses API with `store: false`, approved demo context, moderation, and an input/output contract that maintains the interface's evidence and human-review posture.
+`backend/ai-server.mjs` is an optional, server-side gateway for a live OpenAI-backed version of Aether. It requires an API key set in the server environment, never in the browser. It uses the Responses API with `store: false`, approved demo context, moderation, and an input/output contract that maintains the interface's evidence and human-review posture.
 
-See `DEPLOYMENT.md` for the presentation, live-AI, and hosting handoff path.
+See `DEPLOYMENT.md` for backend deployment guidance. Its earlier hosting-status and direct-file-opening instructions predate the current GitHub Pages deployment; use the live demo link above.
