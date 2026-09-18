@@ -1,6 +1,6 @@
-# Busola | بوصلة
+# Bawsala | بوصلة
 
-Busola is a decision-support prototype for industrial localization in Saudi Arabia, turning supply-chain vulnerabilities into potential manufacturing and investment opportunities. Rather than treating localization as an all-or-nothing decision, it explores products at the component and raw-material level to identify practical starting points for local sourcing or production—even when localizing the entire product is not yet the best option.
+Bawsala is a decision-support prototype for industrial localization in Saudi Arabia, turning supply-chain vulnerabilities into potential manufacturing and investment opportunities. Rather than treating localization as an all-or-nothing decision, it explores products at the component and raw-material level to identify practical starting points for local sourcing or production—even when localizing the entire product is not yet the best option.
 
 ## Live Demo
 
